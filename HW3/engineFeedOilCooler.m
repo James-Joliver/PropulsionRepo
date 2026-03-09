@@ -6,11 +6,19 @@ simIn = Simulink.SimulationInput('engineFeedOilCooler_JamesWilkinson');
 % Define initialization and data to keep track of
 RPM_percent_vec = [10 50 75 100];
 SA_vec = [0.5 1 5 10];
+
+
+%SA = 0.5;
+%radPerSec = 100 * 0.01 * 366.52;
+%data = sim(simIn);
+
+
 effectiveness = zeros(4);
 fuelFlowRate = zeros(4);
 fuelTempDiff = zeros(4);
 heatToFuel = zeros(4);
 oilResTemp = zeros(4);
+
 
 
 % Loop through every itteration
@@ -35,6 +43,7 @@ for i = 1:numel(RPM_percent_vec)
 
     end
 end
+
 
 
 %%
